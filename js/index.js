@@ -195,6 +195,7 @@ $(document).ready(function(){});
 		
 		shuffle(roll); //randToggle과 상관없이 처음에 무조건 셔플
 		rollExcludeEnrolled = roll.slice();
+		drawLoserRound(roundNum);
 		setUp();
 	}
 	
@@ -250,6 +251,7 @@ $(document).ready(function(){});
 		countRemainder = rollCount % 2;
 		totalMatch = countQuotient + countRemainder;
 		rollExcludeEnrolled = roll.slice();
+		drawLoserRound(roundNum);
 		setUp();
 	}
 	
@@ -271,6 +273,7 @@ $(document).ready(function(){});
 	$(function(){
 		$('#left-idol').click(function(){
 			if(finalRound == true){
+				deleteIdolFromRoll(rollExcludeEnrolled[1].uid);
 				winner(0);
 			}
 			else{
@@ -283,6 +286,7 @@ $(document).ready(function(){});
 	$(function(){
 		$('#right-idol').click(function(){
 			if(finalRound == true){
+				deleteIdolFromRoll(rollExcludeEnrolled[0].uid);
 				winner(1);
 			}
 			else{
@@ -303,20 +307,19 @@ $(document).ready(function(){});
 		const tmp = roll.findIndex(function(item){
 			return item.uid == deleteUid
 		});
+		$('#loser-div').children(":last").append('<img class="loser-pic" src="' + roll[tmp].picSrc + '">');
 		roll.splice(tmp,1);
+	}
+	
+	function drawLoserRound(round){
+		$('#loser-div').append('<div class="loser-desc">'+round+'라운드 패자들</div><div class="loser-pics"></div>');
 	}
 	
 	function winner(idol){
 		$('#game-box').css('display', 'none');
 		$('#result-box').css('display', 'block');
-		if(idol==0){
-			$('#winner-desc').html(rollExcludeEnrolled[0].name);
-			$('#winner-pic').attr('src',rollExcludeEnrolled[0].picSrc);
-		}
-		else if(idol==1){
-			$('#winner-desc').html(rollExcludeEnrolled[1].name);
-			$('#winner-pic').attr('src',rollExcludeEnrolled[1].picSrc);
-		}
+		$('#winner-desc').html(roll[0].name);
+		$('#winner-pic').attr('src',roll[0].picSrc);
 		$('#fireworks').css('animation', 'fade-out-long 4s');
 		$('#fireworks').css('opacity', '0%');
 	}
