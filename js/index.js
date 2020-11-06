@@ -112,7 +112,7 @@ $(document).ready(function(){});
 	//밀리0~55 56명(52+사무원2+시이카,레온), 샤니56~79 24명(23+사무원), 신데 80 1명
 	//더 추가하려면 여기에 이름 적고 이미지 파일 넣으면 됨
 	var milliName = ["아마미 하루카", "하기와라 유키호", "키쿠치 마코토", "가나하 히비키", "키사라기 치하야", "미나세 이오리", "시죠 타카네", "아키즈키 리츠코", "호시이 미키", "타카츠키 야요이", "미우라 아즈사", "후타미 아미", "후타미 마미", "카스가 미라이", "타나카 코토하", "사타케 미나코", "토쿠가와 마츠리", "나나오 유리코", "타카야마 사요코", "마츠다 아리사", "코사카 우미", "나카타니 이쿠", "에밀리 스튜어트", "야부키 카나", "요코야마 나오", "후쿠다 노리코", "모가미 시즈카", "토코로 메구미", "로코", "텐쿠바시 토모카", "키타자와 시호", "마이하마 아유무", "니카이도 치즈루", "마카베 미즈키", "모모세 리오", "나가요시 스바루", "스오 모모코", "줄리아", "시라이시 츠무기", "이부키 츠바사", "시마바라 엘레나", "하코자키 세리카", "노노하라 아카네", "모치즈키 안나", "키노시타 히나타", "바바 코노미", "오오가미 타마키", "토요카와 후카", "미야오 미야", "시노미야 카렌", "키타카미 레이카", "사쿠라모리 카오리", "시이카", "레온", "오토나시 코토리", "아오바 미사키"];
-	var cindeName = ["이치노세 시키"];
+	var cindeName = ["이치노세 시키", "죠가사키 미카"];
 	var shinyName = ["사쿠라기 마노", "카자노 히오리", "하치미야 메구루", "츠키오카 코가네", "타나카 마미미", "시라세 사쿠야", "미츠미네 유이카", "유코쿠 키리코", "오사키 아마나", "오사키 텐카", "쿠와야마 치유키", "코미야 카호", "소노다 치요코", "사이죠 쥬리", "모리노 린제", "아리스가와 나츠하", "마유즈미 후유코", "세리자와 아사히", "이즈미 메이", "이치카와 히나나", "아사쿠라 토오루", "히구치 마도카", "후쿠마루 코이토", "나나쿠사 하즈키"];
 	
 	const milliNum = milliName.length //56
@@ -121,19 +121,19 @@ $(document).ready(function(){});
 	
 	var milliIdol = new Array();
 	for(var i = 0; i <= milliNum-1; i++){
-		milliIdol[i] = new Idol(i, milliName[i], "밀리언라이브", "./img/" + i+1 + ".png");
+		milliIdol[i] = new Idol(i, milliName[i], "밀리언라이브", "./img/" + eval("i+1") + ".png");
 	}
 	
 	
 	var shinyIdol = new Array();
 	for(var i = 0; i <= shinyNum-1; i++){
-		shinyIdol[i] = new Idol(i+milliNum, shinyName[i], "샤이니컬러즈", "./img/" + i+milliNum+1 + ".png");
+		shinyIdol[i] = new Idol(i+milliNum, shinyName[i], "샤이니컬러즈", "./img/" + eval("i+milliNum+1") + ".png");
 	}
 	
 	
 	var cindeIdol = new Array();
 	for(var i = 0; i <= cindeNum-1; i++){
-		shinyIdol[i] = new Idol(i+milliNum+shinyNum, cindeName[i], "샤이니컬러즈", "./img/" + i+milliNum+shinyNum+1 + ".png");
+		shinyIdol[i] = new Idol(i+milliNum+shinyNum, cindeName[i], "샤이니컬러즈", "./img/" + eval("i+milliNum+shinyNum+1") + ".png");
 	}
 	
 	
