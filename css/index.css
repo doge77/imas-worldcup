@@ -1,3 +1,22 @@
+#container{
+	width:900px;
+	height:100%;
+}
+
+#main-div{
+	width:900px;
+	height:600px;
+}
+
+#loser-div{
+	width:900px;
+	height:100%;
+}
+
+
+
+
+
 #intro-box{
 	position:absoulute;
 	background-color:hotpink;
