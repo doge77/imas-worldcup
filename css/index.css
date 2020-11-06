@@ -1,4 +1,4 @@
-﻿#intro-box{
+#intro-box{
 	position:absoulute;
 	background-color:hotpink;
 	width:900px;
@@ -102,7 +102,6 @@
 	background-color:white;
 	width:900px;
 	height:600px;
-	display:none;
 }
 
 
