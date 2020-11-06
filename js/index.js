@@ -3,6 +3,15 @@ $(document).ready(function(){});
 	var million = false, cinderella = false, shiny = false;
 	var randToggle;
 	
+	$().ready(function(){
+		preload();
+		setTimeout(function(){
+			$('#loading').hide();
+		}, 1000);
+	});
+		
+	
+	
 	$(function(){
 		$('#million-toggle').click(function(){
 			if (million == false){
@@ -91,14 +100,18 @@ $(document).ready(function(){});
 				}
 				initiating();
 				$('#intro-box').css('display', 'none');
-				$('#loading').css('display', 'block');
-				setTimeout(function(){
-					$('#loading').css('display', 'none');
-					$('#game-box').css('display', 'block');
-					},1000);
+				$('#game-box').css('display', 'block');
 			}
 		});
 	});
+	
+	var imgArr = new Array();
+	function preload(){
+		for(var i = 1; i <=165; i++){
+			imgArr[i] = new Image();
+			imgArr[i].src = "./img/" + eval("i") + ".png";
+		}
+	}
 	
 	
 	//Idol 프로토타입
@@ -116,7 +129,7 @@ $(document).ready(function(){});
 	var shinyName = ["사쿠라기 마노", "카자노 히오리", "하치미야 메구루", "츠키오카 코가네", "타나카 마미미", "시라세 사쿠야", "미츠미네 유이카", "유코쿠 키리코", "오사키 아마나", "오사키 텐카", "쿠와야마 치유키", "코미야 카호", "소노다 치요코", "사이죠 쥬리", "모리노 린제", "아리스가와 나츠하", "마유즈미 후유코", "세리자와 아사히", "이즈미 메이", "이치카와 히나나", "아사쿠라 토오루", "히구치 마도카", "후쿠마루 코이토", "나나쿠사 하즈키"];
 	
 	const milliNum = milliName.length //56
-	const cindeNum = cindeName.length //1
+	const cindeNum = cindeName.length //85
 	const shinyNum = shinyName.length //24
 	
 	var milliIdol = new Array();
