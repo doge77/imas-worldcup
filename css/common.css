@@ -1,4 +1,4 @@
-﻿html, body{
+html, body{
 	margin:0;
 	padding:0;
 	width:100%;
@@ -24,6 +24,24 @@
 	margin:auto;
 }
 
+
+.loser-desc{
+	font-size:20px;
+	width:900px;
+	text-align:center;
+}
+
+.loser-pic{
+	width:80px;
+	height:80px;
+	margin-left:2px;
+	margin-right:2px;
+}
+
+.loser-pics{
+	width:900px;
+	text-align: center;
+}
 
 
 
